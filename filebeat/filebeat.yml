@@ -1,0 +1,16 @@
+# Structured Logging Example
+
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /path/to/logs/*.json
+  json:
+    keys_under_root: true
+
+output.elasticsearch:
+  hosts:
+    - localhost:9200
+  template:
+    name: spring-boot-service
+    path: spring-boot-service.template.json
+
