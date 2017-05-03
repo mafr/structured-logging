@@ -18,7 +18,7 @@ which gives us the mechanism to log data in JSON format:
     </dependency>
 ```
 
-If you have multiple Spring Boot services that cooperate to fulfil a request,
+If you have multiple Spring Boot services that cooperate to fulfill a request,
 you can optionally add
 [Spring Cloud Sleuth](http://cloud.spring.io/spring-cloud-sleuth/) to gain
 correlation IDs:

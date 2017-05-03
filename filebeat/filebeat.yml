@@ -10,6 +10,7 @@ filebeat.prospectors:
 output.elasticsearch:
   hosts:
     - localhost:9200
+  index: "filebeat-%{[service]:unknown-service}-%{+yyyy.MM.dd}"
   template:
     name: spring-boot-service
     path: spring-boot-service.template.json
