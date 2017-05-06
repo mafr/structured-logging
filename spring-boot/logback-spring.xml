@@ -72,10 +72,10 @@
                             "span": "%X{X-B3-SpanId:-}",
                             "parent": "%X{X-B3-ParentSpanId:-}",
                             "exportable": "%X{X-Span-Export:-}",
-                            "pid": "${PID:-}",
+                            "pid": ${PID:-},
                             "thread": "%thread",
                             "logger": "%logger",
-                            "rest": "%message"
+                            "message": "%message"
                         }
                     </pattern>
                 </pattern>
