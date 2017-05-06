@@ -1,0 +1,81 @@
+{
+  "template": "filebeat-*",
+  "settings": {
+    "index": {
+      "number_of_shards": 3,
+      "number_of_replicas": 2,
+      "query": {
+        "default_field": "message"
+      }
+    }
+  },
+  "mappings": {
+    "_default_": {
+      "_all": {
+        "enabled": false
+      },
+      "date_detection": false,
+      "dynamic_templates": [
+        {
+           "all-keywords": {
+             "match": "*",
+             "mapping": {
+               "type": "keyword"
+             }
+           }
+	}
+      ],
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "offset": {
+          "type": "long"
+        },
+        "pid": {
+          "type": "long"
+        },
+        "beat": {
+          "properties": {
+            "hostname": {
+              "type": "keyword"
+            },
+            "name": {
+              "type": "keyword"
+            },
+            "version": {
+              "type": "keyword"
+            }
+          }
+        },
+        "exportable": {
+          "type": "boolean"
+        },
+        "thread": {
+          "type": "text",
+          "norms": false
+        },
+        "logger": {
+          "type": "text",
+          "norms": false,
+          "analyzer": "simple"
+        },
+        "stack_trace": {
+          "type": "text",
+          "norms": false,
+          "analyzer": "simple"
+        },
+        "action": {
+          "type": "text",
+          "norms": false,
+          "analyzer": "english"
+        },
+        "message": {
+          "type": "text",
+          "norms": false,
+          "analyzer": "english"
+        }
+      }
+    }
+  }
+}
