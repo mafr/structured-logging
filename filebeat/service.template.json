@@ -17,13 +17,13 @@
       "date_detection": false,
       "dynamic_templates": [
         {
-           "all-keywords": {
-             "match": "*",
-             "mapping": {
-               "type": "keyword"
-             }
-           }
-	}
+          "all-keywords": {
+            "match": "*",
+            "mapping": {
+              "type": "keyword"
+            }
+          }
+        }
       ],
       "properties": {
         "@timestamp": {
